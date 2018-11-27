@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_op_umrah_form_fees_inherit" model="ir.ui.view">
+            <field name="name">op.umrah.form.fees.inherit</field>
+            <field name="model">op.umrah</field>
+            <field name="inherit_id" ref="travel__agency.view_op_Umrah_form" />
+            <field name="priority" eval="9" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='image']" position="before">
+                    <button type="object"
+                        class="oe_right oe_stat_button"
+                        id="invoice_button"
+                        icon="fa-pencil-square-o"
+                        name="action_view_invoice"
+                        groups="openeducat_core.group_op_back_office">
+                        <div><strong><field name="total_invoiced" widget="monetary"/></strong><br/>Invoiced</div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
